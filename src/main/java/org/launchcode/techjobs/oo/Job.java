@@ -17,9 +17,124 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
-    //  match.
+    Job(){
+        id = nextId;
+        nextId++;
+    }
+
+    Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
+        this();
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Job job)) return false;
+        return id == job.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Employer getEmployer() {
+        return employer;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public PositionType getPositionType() {
+        return positionType;
+    }
+
+    public CoreCompetency getCoreCompetency() {
+        return coreCompetency;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public void setPositionType(PositionType positionType) {
+        this.positionType = positionType;
+    }
+
+    public void setCoreCompetency(CoreCompetency coreCompetency) {
+        this.coreCompetency = coreCompetency;
+    }
+
+
+   @Override
+   public String toString() {
+
+       String newLine = System.lineSeparator();//// Doesn't work
+
+       if ((getName().isEmpty()) && (getEmployer().getValue().isEmpty()) && (getLocation().getValue().isEmpty()) && (positionType.getValue().isEmpty()) && (coreCompetency.getValue().isEmpty()))
+       {
+           return  "OOPS! This job does not seem to exist.";
+       }
+        if (getName().isEmpty())
+        {
+            setName("Data not available");
+        }
+        if (getEmployer().getValue().isEmpty())
+        {
+            employer.setValue("Data not available");
+        }
+        if (getLocation().getValue().isEmpty())
+        {
+            location.setValue("Data not available");
+        }
+        if (positionType.getValue().isEmpty())
+        {
+            positionType.setValue("Data not available");
+        }
+        if (coreCompetency.getValue().isEmpty())
+        {
+            coreCompetency.setValue("Data not available");
+        }
+
+        return "\n" +
+                " ID: " + id + newLine +
+                " Name: " + name + newLine +
+                " Employer: " + employer + newLine +
+                " Location: " + location + newLine +
+                " Position Type: " + positionType + newLine +
+                " Core Competency: " + coreCompetency +
+                "\n" ;
+
+//       return String.format("\nID: %d\n" +
+//               "Name: %s\n" +
+//               "Employer: %s\n" +
+//               "Location: %s\n" +
+//               "Position Type: %s\n" +
+//               "Core Competency: %s\n",id, name, employer,location, positionType,coreCompetency);
+
+    }
+
 }

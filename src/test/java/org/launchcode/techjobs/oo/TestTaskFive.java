@@ -61,6 +61,7 @@ public class TestTaskFive extends AbstractTest {
         assertEquals(jobString, job.toString());
     }
 
+
     @Test
     public void testTestToStringHandlesEmptyFieldExists () throws ClassNotFoundException {
         Class jobTestClass = getClassByName("JobTest");
