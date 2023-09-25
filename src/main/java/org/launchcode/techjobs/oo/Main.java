@@ -35,8 +35,9 @@ public class Main {
 //        Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
 //        Job job3 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
 //        Job job4 = new Job("", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency(""));
-       // Job job5 = new Job("asf", "cahha","kiuhik", "iugh", "hjkji");
-//        ArrayList<Job> jobs = new ArrayList<>();
+       // Job job5 = new Job("Web Developer", "LaunchCode", "StL", "Back-end developer", "Java");//
+
+        //  ArrayList<Job> jobs = new ArrayList<>();
 //        jobs.add(job1);
 //        jobs.add(job2);
 //        jobs.add(job3);
@@ -48,11 +49,11 @@ public class Main {
             //System.out.println(job.getLocation());
 
       //  }
-        //System.out.println(job2);
-
-
-//        System.out.println(job1.getId());
-//        System.out.println(job1.getEmployer());
+//        System.out.println(job5);
+//
+//
+//        System.out.println(job5.getId());
+//        System.out.println(job5.getEmployer());
 //        //System.out.println(job1.setEmployer("AT&T"));
 //
 //        System.out.println(job1.getName().toUpperCase());
@@ -68,6 +69,7 @@ public class Main {
 //        System.out.println(j.getId());
 //        //System.out.println(j.toString());
 //        System.out.println(job4);
+
 
     }
 

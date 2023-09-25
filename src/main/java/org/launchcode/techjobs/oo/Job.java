@@ -8,10 +8,18 @@ public class Job {
     private static int nextId = 1;
 
     private String name;
-    private Employer employer;
-    private Location location;
-    private PositionType positionType;
-    private CoreCompetency coreCompetency;
+   // private Employer employer;
+    private String employer;
+   // private Location location;
+
+    private String location;
+
+    //private PositionType positionType;
+    private String positionType;
+
+    //private CoreCompetency coreCompetency;
+    private String coreCompetency;
+
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -22,8 +30,10 @@ public class Job {
         nextId++;
     }
 
-    Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
-        this();
+   // Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
+        Job(String name, String employer, String location, String positionType, String coreCompetency){
+
+            this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -44,49 +54,99 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public Employer getEmployer() {
-        return employer;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public PositionType getPositionType() {
-        return positionType;
-    }
-
-    public CoreCompetency getCoreCompetency() {
-        return coreCompetency;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setEmployer(Employer employer) {
+    public String getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(String employer) {
         this.employer = employer;
     }
 
-    public void setLocation(Location location) {
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    public void setPositionType(PositionType positionType) {
+    public String getPositionType() {
+        return positionType;
+    }
+
+    public void setPositionType(String positionType) {
         this.positionType = positionType;
     }
 
-    public void setCoreCompetency(CoreCompetency coreCompetency) {
+    public String getCoreCompetency() {
+        return coreCompetency;
+    }
+
+    public void setCoreCompetency(String coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public Employer getEmployer() {
+//        return employer;
+//    }
+//
+//    public Location getLocation() {
+//        return location;
+//    }
+//
+//    public PositionType getPositionType() {
+//        return positionType;
+//    }
+//
+//    public CoreCompetency getCoreCompetency() {
+//        return coreCompetency;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public void setEmployer(Employer employer) {
+//        this.employer = employer;
+//    }
+//
+//    public void setLocation(Location location) {
+//        this.location = location;
+//    }
+//
+//    public void setPositionType(PositionType positionType) {
+//        this.positionType = positionType;
+//    }
+//
+//    public void setCoreCompetency(CoreCompetency coreCompetency) {
+//        this.coreCompetency = coreCompetency;
+//    }
 
 
    @Override
@@ -94,30 +154,47 @@ public class Job {
 
        String newLine = System.lineSeparator();//// Doesn't work
 
-       if ((getName().isEmpty()) && (getEmployer().getValue().isEmpty()) && (getLocation().getValue().isEmpty()) && (positionType.getValue().isEmpty()) && (coreCompetency.getValue().isEmpty()))
-       {
+      // if ((getName().isEmpty()) && (getEmployer().getValue().isEmpty()) && (getLocation().getValue().isEmpty()) && (positionType.getValue().isEmpty()) && (coreCompetency.getValue().isEmpty()))
+           if ((getName().isEmpty()) && (getEmployer().isEmpty()) && (getLocation().isEmpty()) && (getPositionType().isEmpty()) && (getCoreCompetency().isEmpty()))
+
+
+           {
            return  "OOPS! This job does not seem to exist.";
        }
         if (getName().isEmpty())
         {
             setName("Data not available");
         }
-        if (getEmployer().getValue().isEmpty())
-        {
-            employer.setValue("Data not available");
+        //if (getEmployer().getValue().isEmpty())
+            if (getEmployer().isEmpty())
+
+            {
+            setEmployer("Data not available");
         }
-        if (getLocation().getValue().isEmpty())
-        {
-            location.setValue("Data not available");
-        }
-        if (positionType.getValue().isEmpty())
-        {
-            positionType.setValue("Data not available");
-        }
-        if (coreCompetency.getValue().isEmpty())
-        {
-            coreCompetency.setValue("Data not available");
-        }
+       // if (getLocation().getValue().isEmpty())
+            if (getLocation().isEmpty())
+
+            {
+           // location.setValue("Data not available");
+                setLocation("Data not available");
+
+            }
+        //if (positionType.getValue().isEmpty())
+            if (getPositionType().isEmpty())
+
+            {
+            //positionType.setValue("Data not available");
+                setPositionType("Data not available");
+
+            }
+       // if (coreCompetency.getValue().isEmpty())
+            if (getCoreCompetency().isEmpty())
+
+            {
+            //coreCompetency.setValue("Data not available");
+                setCoreCompetency("Data not available");
+
+            }
 
         return "\n" +
                 " ID: " + id + newLine +
