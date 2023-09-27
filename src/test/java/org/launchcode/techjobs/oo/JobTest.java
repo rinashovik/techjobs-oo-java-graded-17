@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 
 public class JobTest {
     //TODO: Create your unit tests here
-         String lineSeparator = "\n";
-
+         String newLine = "\n";
+            //String newLine = System.lineSeparator();
 @Test
 public void testSettingJobId() {
 
@@ -49,13 +49,13 @@ public void testToStringStartsAndEndsWithNewLine(){
     // Job job6 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
     Job job5 = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"),new CoreCompetency("Java"));
 
-    // String lineSeparator = "\n";
+//     String lineSeparator = "\n";
    // String lineSeparator = System.lineSeparator();
 
     String firstChar = String.valueOf(job5.toString().charAt(0));
     String lastChar = String.valueOf(job5.toString().charAt(job5.toString().length()-1));
-        assertEquals(firstChar, lineSeparator);
-        assertEquals(lastChar, lineSeparator);
+        assertEquals(firstChar, newLine);
+        assertEquals(lastChar, newLine);
 }
 
 @Test
@@ -63,13 +63,13 @@ public void testToStringContainsCorrectLabelsAndData(){
 
     Job job5 = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"),new CoreCompetency("Java"));
    // String newLine = lineSeparator();
-    assertEquals(lineSeparator +
-                    "ID: " + 4 + lineSeparator +
-                    "Name: " + "Web Developer" + lineSeparator +
-                    "Employer: " + "LaunchCode" + lineSeparator +
-                    "Location: " + "StL" + lineSeparator +
-                    "Position Type: " + "Back-end developer" + lineSeparator +
-                    "Core Competency: " + "Java" + lineSeparator,   job5.toString());
+    assertEquals(newLine +
+                    "ID: " + 4 + newLine +
+                    "Name: " + "Web Developer" + newLine +
+                    "Employer: " + "LaunchCode" + newLine +
+                    "Location: " + "StL" + newLine +
+                    "Position Type: " + "Back-end developer" + newLine +
+                    "Core Competency: " + "Java" + newLine,   job5.toString());
 
 }
 
@@ -78,13 +78,13 @@ public void testToStringHandlesEmptyField(){
 
    Job testJob5 = new Job("Web Developer", new Employer(""), new Location("StL"), new PositionType(""), new CoreCompetency("Java"));
    // String newLine = lineSeparator();
-    assertEquals(lineSeparator +
-                    "ID: " + 3 + lineSeparator +
-                    "Name: " + "Web Developer" + lineSeparator +
-                    "Employer: " + "Data not available" + lineSeparator +
-                    "Location: " + "StL" + lineSeparator +
-                    "Position Type: " + "Data not available" + lineSeparator +
-                    "Core Competency: " + "Java" + lineSeparator,   testJob5.toString());
+    assertEquals(newLine +
+                    "ID: " + 3 + newLine +
+                    "Name: " + "Web Developer" + newLine +
+                    "Employer: " + "Data not available" + newLine +
+                    "Location: " + "StL" + newLine +
+                    "Position Type: " + "Data not available" + newLine +
+                    "Core Competency: " + "Java" + newLine,   testJob5.toString());
 
 }
 

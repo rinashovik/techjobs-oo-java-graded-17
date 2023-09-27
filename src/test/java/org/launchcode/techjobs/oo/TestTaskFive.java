@@ -39,10 +39,10 @@ public class TestTaskFive extends AbstractTest {
         String firstChar = String.valueOf(job.toString().charAt(0));
         String lastChar = String.valueOf(job.toString().charAt(job.toString().length()-1));
 
-        String lineSeparator = "\n";
+        String newLine = "\n";
 
-        assertEquals(firstChar, lineSeparator);
-        assertEquals(lastChar, lineSeparator);
+        assertEquals(firstChar, newLine);
+        assertEquals(lastChar, newLine);
         //assertEquals(firstChar, lineSeparator());
         //assertEquals(lastChar, lineSeparator());
 

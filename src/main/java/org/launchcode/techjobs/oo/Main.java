@@ -25,9 +25,24 @@ public class Main {
 //
 //
 //        System.out.println("*********************************");
+        //System.out.println(System.getProperties("line.separator"));
+       // String s = System.getProperty("line.separator");
 
+//        String s = System.lineSeparator();
+//        //System.out.println(s+"hi"+s);
+//
+//        System.out.println(System.lineSeparator());
+//        Integer x = 636;
 
+        //for (char c : s.toCharArray()) {
+            //System.out.println(System.lineSeparator());
 
+//        System.out.println("[your mess+nage]");
+//        System.out.println("Heelo");
+//        System.out.println("[your me\rssage]");
+//        System.lineSeparator();
+//        System.out.println("\nRF:UGTF:P:YHU\nYGTV");
+//       // }
 
     }
 

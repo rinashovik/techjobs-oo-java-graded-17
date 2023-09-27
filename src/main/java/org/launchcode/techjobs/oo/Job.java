@@ -105,8 +105,8 @@ public class Job {
    @Override
    public String toString() {
 
-       //String lineSeparator = lineSeparator();//// Doesn't work
-         String lineSeparator = "\n";
+       //String newLine = System.lineSeparator();//// Doesn't work
+         String newLine = "\n";
 
        if ((getName().isEmpty()) && (getEmployer().getValue().isEmpty()) && (getLocation().getValue().isEmpty()) && (getPositionType().getValue().isEmpty()) && (getCoreCompetency().getValue().isEmpty()))
 
@@ -141,14 +141,22 @@ public class Job {
 
             }
 
+       return newLine +
+               "ID: " + id + newLine +
+               "Name: " + name + newLine +
+               "Employer: " + employer + newLine +
+               "Location: " + location + newLine +
+               "Position Type: " + positionType + newLine +
+               "Core Competency: " + coreCompetency + newLine;
 
-        return lineSeparator +
-                       "ID: " + id + lineSeparator +
-                       "Name: " + name + lineSeparator +
-                       "Employer: " + employer + lineSeparator +
-                       "Location: " + location + lineSeparator +
-                       "Position Type: " + positionType + lineSeparator +
-                       "Core Competency: " + coreCompetency + lineSeparator;
+
+//        return lineSeparator +
+//                       "ID: " + id + lineSeparator +
+//                       "Name: " + name + lineSeparator +
+//                       "Employer: " + employer + lineSeparator +
+//                       "Location: " + location + lineSeparator +
+//                       "Position Type: " + positionType + lineSeparator +
+//                       "Core Competency: " + coreCompetency + lineSeparator;
 
 
     }
