@@ -2,44 +2,104 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+import static org.junit.Assert.assertEquals;
+
+
 public class Job {
 
     private int id;
     private static int nextId = 1;
 
     private String name;
-   // private Employer employer;
-    private String employer;
-   // private Location location;
+    private Employer employer;
+   // private String employer;
+    private Location location;
 
-    private String location;
+    //private String location;
 
-    //private PositionType positionType;
-    private String positionType;
+    private PositionType positionType;
+   //private String positionType;
 
-    //private CoreCompetency coreCompetency;
-    private String coreCompetency;
+    private CoreCompetency coreCompetency;
+    //private String coreCompetency;
 
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
-    Job(){
+    public Job(){
         id = nextId;
         nextId++;
     }
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
+        //  Job(String name, String employer, String location, String positionType, String coreCompetency){
 
-   // Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
-        Job(String name, String employer, String location, String positionType, String coreCompetency){
-
-            this();
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+    public int getId() {
+        return id;
+    }
+
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//
+//    public static int getNextId() {
+//        return nextId;
+//    }
+//
+//    public static void setNextId(int nextId) {
+//        Job.nextId = nextId;
+//    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Employer getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public PositionType getPositionType() {
+        return positionType;
+    }
+
+    public void setPositionType(PositionType positionType) {
+        this.positionType = positionType;
+    }
+
+    public CoreCompetency getCoreCompetency() {
+        return coreCompetency;
+    }
+
+    public void setCoreCompetency(CoreCompetency coreCompetency) {
+        this.coreCompetency = coreCompetency;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -55,108 +115,15 @@ public class Job {
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmployer() {
-        return employer;
-    }
-
-    public void setEmployer(String employer) {
-        this.employer = employer;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getPositionType() {
-        return positionType;
-    }
-
-    public void setPositionType(String positionType) {
-        this.positionType = positionType;
-    }
-
-    public String getCoreCompetency() {
-        return coreCompetency;
-    }
-
-    public void setCoreCompetency(String coreCompetency) {
-        this.coreCompetency = coreCompetency;
-    }
-
-
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public Employer getEmployer() {
-//        return employer;
-//    }
-//
-//    public Location getLocation() {
-//        return location;
-//    }
-//
-//    public PositionType getPositionType() {
-//        return positionType;
-//    }
-//
-//    public CoreCompetency getCoreCompetency() {
-//        return coreCompetency;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public void setEmployer(Employer employer) {
-//        this.employer = employer;
-//    }
-//
-//    public void setLocation(Location location) {
-//        this.location = location;
-//    }
-//
-//    public void setPositionType(PositionType positionType) {
-//        this.positionType = positionType;
-//    }
-//
-//    public void setCoreCompetency(CoreCompetency coreCompetency) {
-//        this.coreCompetency = coreCompetency;
-//    }
-
 
    @Override
    public String toString() {
 
-       String newLine = System.lineSeparator();//// Doesn't work
+       //String lineSeparator = lineSeparator();//// Doesn't work
+         String lineSeparator = "\n";
 
-      // if ((getName().isEmpty()) && (getEmployer().getValue().isEmpty()) && (getLocation().getValue().isEmpty()) && (positionType.getValue().isEmpty()) && (coreCompetency.getValue().isEmpty()))
-           if ((getName().isEmpty()) && (getEmployer().isEmpty()) && (getLocation().isEmpty()) && (getPositionType().isEmpty()) && (getCoreCompetency().isEmpty()))
-
+      // if ((name.isEmpty()) && (employer.getValue().isEmpty()) && (location.getValue().isEmpty()) && (positionType.getValue().isEmpty()) && (coreCompetency.getValue().isEmpty()))
+       if ((getName().isEmpty()) && (getEmployer().getValue().isEmpty()) && (getLocation().getValue().isEmpty()) && (getPositionType().getValue().isEmpty()) && (getCoreCompetency().getValue().isEmpty()))
 
            {
            return  "OOPS! This job does not seem to exist.";
@@ -165,52 +132,49 @@ public class Job {
         {
             setName("Data not available");
         }
-        //if (getEmployer().getValue().isEmpty())
-            if (getEmployer().isEmpty())
+        if (getEmployer().getValue().isEmpty())
 
             {
-            setEmployer("Data not available");
+            getEmployer().setValue("Data not available");
         }
-       // if (getLocation().getValue().isEmpty())
-            if (getLocation().isEmpty())
+       if (getLocation().getValue().isEmpty())
 
             {
-           // location.setValue("Data not available");
-                setLocation("Data not available");
+            getLocation().setValue("Data not available");
 
             }
-        //if (positionType.getValue().isEmpty())
-            if (getPositionType().isEmpty())
+        if (getPositionType().getValue().isEmpty())
 
             {
-            //positionType.setValue("Data not available");
-                setPositionType("Data not available");
+            getPositionType().setValue("Data not available");
 
             }
-       // if (coreCompetency.getValue().isEmpty())
-            if (getCoreCompetency().isEmpty())
+        if (getCoreCompetency().getValue().isEmpty())
 
             {
-            //coreCompetency.setValue("Data not available");
-                setCoreCompetency("Data not available");
+            getCoreCompetency().setValue("Data not available");
 
             }
+//String newLine = System.lineSeparator();
+//
+//
+//       return lineSeparator() +
+//               "ID: " + id + newLine +
+//               "Name: " + name + newLine +
+//               "Employer: " + employer + newLine +
+//               "Location: " + location + newLine +
+//               "Position Type: " + positionType + newLine +
+//               "Core Competency: " + coreCompetency + lineSeparator();
 
-        return "\n" +
-                " ID: " + id + newLine +
-                " Name: " + name + newLine +
-                " Employer: " + employer + newLine +
-                " Location: " + location + newLine +
-                " Position Type: " + positionType + newLine +
-                " Core Competency: " + coreCompetency +
-                "\n" ;
 
-//       return String.format("\nID: %d\n" +
-//               "Name: %s\n" +
-//               "Employer: %s\n" +
-//               "Location: %s\n" +
-//               "Position Type: %s\n" +
-//               "Core Competency: %s\n",id, name, employer,location, positionType,coreCompetency);
+        return lineSeparator +
+                       "ID: " + id + lineSeparator +
+                       "Name: " + name + lineSeparator +
+                       "Employer: " + employer + lineSeparator +
+                       "Location: " + location + lineSeparator +
+                       "Position Type: " + positionType + lineSeparator +
+                       "Core Competency: " + coreCompetency + lineSeparator;
+
 
     }
 
