@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public abstract class JobField {
 
-    private int id;
+    private final int id;
     private static int nextId = 1;
     private String value;
 
@@ -27,25 +27,30 @@ public abstract class JobField {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(id);
     }
 
 
     @Override
     public String toString() {
+
         return value;
     }
 
     public int getId() {
+
         return id;
     }
 
 
     public String getValue() {
+
         return value;
     }
 
     public void setValue(String value) {
+
         this.value = value;
     }
 }

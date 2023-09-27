@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Job {
 
-    private int id;
+    private final int id;
     private static int nextId = 1;
 
     private String name;
@@ -25,10 +25,6 @@ public class Job {
     //private String coreCompetency;
 
 
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field.
-
     public Job(){
         id = nextId;
         nextId++;
@@ -44,20 +40,10 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
     public int getId() {
+
         return id;
     }
 
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-//
-//    public static int getNextId() {
-//        return nextId;
-//    }
-//
-//    public static void setNextId(int nextId) {
-//        Job.nextId = nextId;
-//    }
 
     public String getName() {
         return name;
