@@ -8,7 +8,6 @@ public abstract class JobField {
     private static int nextId = 1;
     private String value;
 
-
     public JobField() {
         id = nextId;// default
         nextId++;
@@ -30,7 +29,6 @@ public abstract class JobField {
     public int hashCode() {
         return Objects.hash(id);
     }
-
 
 
     @Override

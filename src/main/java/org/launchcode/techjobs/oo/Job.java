@@ -122,7 +122,6 @@ public class Job {
        //String lineSeparator = lineSeparator();//// Doesn't work
          String lineSeparator = "\n";
 
-      // if ((name.isEmpty()) && (employer.getValue().isEmpty()) && (location.getValue().isEmpty()) && (positionType.getValue().isEmpty()) && (coreCompetency.getValue().isEmpty()))
        if ((getName().isEmpty()) && (getEmployer().getValue().isEmpty()) && (getLocation().getValue().isEmpty()) && (getPositionType().getValue().isEmpty()) && (getCoreCompetency().getValue().isEmpty()))
 
            {
@@ -155,16 +154,6 @@ public class Job {
             getCoreCompetency().setValue("Data not available");
 
             }
-//String newLine = System.lineSeparator();
-//
-//
-//       return lineSeparator() +
-//               "ID: " + id + newLine +
-//               "Name: " + name + newLine +
-//               "Employer: " + employer + newLine +
-//               "Location: " + location + newLine +
-//               "Position Type: " + positionType + newLine +
-//               "Core Competency: " + coreCompetency + lineSeparator();
 
 
         return lineSeparator +
